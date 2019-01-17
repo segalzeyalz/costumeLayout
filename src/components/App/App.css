@@ -1,3 +1,7 @@
+:local(.App){
+  height:cacl(100vh - 50px);
+  overflow: hidden;
+}
 :local(.AppContainer){
     display: flex;
     flex-direction: row;
@@ -5,4 +9,18 @@
     justify-content: space-around;
     align-content: stretch;
     align-items: stretch;
+    height: 100%;
+}
+
+:local(.Components){
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    background: green;
+}
+
+:local(.Layouts){
+  order: 0;
+  flex: 1 1 auto;
+  align-self: auto;
 }
