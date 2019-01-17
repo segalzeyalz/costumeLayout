@@ -1,2 +1,8 @@
-:local(.App){
+:local(.AppContainer){
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: stretch;
+    align-items: stretch;
 }

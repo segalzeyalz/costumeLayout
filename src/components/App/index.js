@@ -7,6 +7,14 @@ class App extends Component {
     return (
       <div className={CSS.App}>
         <Header/>
+        <div className={CSS.AppContainer}>
+          <div className={CSS.Components}>
+            Here are components
+          </div>
+          <div className={CSS.Layouts}>
+            Here is Layout
+          </div>
+        </div>
       </div>
     );
   }
