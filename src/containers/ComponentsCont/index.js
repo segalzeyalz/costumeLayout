@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import * as actionTypes from './../../store/actions';
 import { connect } from 'react-redux';
-import {ButtonAppBar, DeafultButton, SecondaryButton, CustomizedBadge, CircularDeterminate, ControlledOpenSelect} from './../../components/Comps/'
 import CSS from './ComponentsCont.css';
+import {ButtonAppBar,
+        DeafultButton,
+        SecondaryButton,
+        CustomizedBadge,
+        CircularDeterminate,
+        ControlledOpenSelect,
+        CustomizedSnackbars,
+        SimpleTooltips} from './../../components/Comps/'
 
 class ComponentsCont extends Component {
     render(){
@@ -12,7 +19,9 @@ class ComponentsCont extends Component {
                    <SecondaryButton/>
                    <CustomizedBadge/>
                    <CircularDeterminate/>
-                   <ControlledOpenSelect isOpen={false}/>
+                   <ControlledOpenSelect/>
+                   <CustomizedSnackbars/>
+                   <SimpleTooltips/>
                 </div>)
     }
 }

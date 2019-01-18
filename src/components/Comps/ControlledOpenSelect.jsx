@@ -41,17 +41,12 @@ class ControlledOpenSelect extends React.Component {
         console.log(this.props)
     return (
         <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="demo-controlled-open-select">Age</InputLabel>
           <Select
             open={this.state.open}
             onClose={this.handleClose}
             onOpen={this.handleOpen}
             value={this.state.age}
             onChange={this.handleChange}
-            inputProps={{
-              name: 'age',
-              id: 'demo-controlled-open-select',
-            }}
           >
           </Select>
         </FormControl>
