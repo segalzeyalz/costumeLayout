@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as actionTypes from './../../store/actions';
 import { connect } from 'react-redux';
-import {ButtonAppBar, DeafultButton} from './../../components/Comps/'
+import {ButtonAppBar, DeafultButton, SecondaryButton} from './../../components/Comps/'
 import CSS from './ComponentsCont.css';
 
 class ComponentsCont extends Component {
@@ -9,6 +9,7 @@ class ComponentsCont extends Component {
         return (<div className={CSS.ComponentsCont}>
                    <ButtonAppBar position="static">AppBar</ButtonAppBar>
                    <DeafultButton />
+                   <SecondaryButton/>
                 </div>)
     }
 }

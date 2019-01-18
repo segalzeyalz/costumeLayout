@@ -9,19 +9,16 @@ const styles = theme => ({
   }
 });
 
-const DeafultButton = (props)=> {
+const SecondaryButton= (props)=> {
   const { classes } = props;
   return (
-    <div>
-      <Button variant="contained" className={classes.button}>
-        Default
+      <Button variant="contained" color="secondary" className={classes.button}>
+        Secondary
       </Button>
-    </div>
   );
 }
-
-DeafultButton.propTypes = {
+SecondaryButton.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(DeafultButton);
+export default withStyles(styles)(SecondaryButton);

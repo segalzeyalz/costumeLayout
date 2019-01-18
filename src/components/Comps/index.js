@@ -1,3 +1,4 @@
 import ButtonAppBar from './ButtonAppBar';
 import DeafultButton from './DeafultButton';
-export {ButtonAppBar, DeafultButton};
+import SecondaryButton from './SecondaryButton';
+export {ButtonAppBar, DeafultButton, SecondaryButton};
