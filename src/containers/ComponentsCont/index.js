@@ -7,7 +7,7 @@ import CSS from './ComponentsCont.css';
 class ComponentsCont extends Component {
     render(){
         return (<div className={CSS.ComponentsCont}>
-                    <Button/>
+               <Button variant="contained" color="primary" >ddddddddd</Button>
                 </div>)
     }
 }
