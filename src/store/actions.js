@@ -1,0 +1,1 @@
+export const NEXT_STOCK = 'NEXT_STOCK';

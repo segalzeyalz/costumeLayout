@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Header from './../Header'
+import Header from './../Header';
+import ComponentsCont from './../../containers/ComponentsCont';
 import CSS from './App.css';
 
 class App extends Component {
@@ -9,7 +10,7 @@ class App extends Component {
         <Header/>
         <div className={CSS.AppContainer}>
           <div className={CSS.Components}>
-            Here are components
+            <ComponentsCont/>
           </div>
           <div className={CSS.Layouts}>
             Here is Layout
