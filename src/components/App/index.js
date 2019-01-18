@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Header from './../Header';
 import ComponentsCont from './../../containers/ComponentsCont';
+import { BrowserRouter } from 'react-router-dom'
+
 import CSS from './App.css';
 
 class App extends Component {
