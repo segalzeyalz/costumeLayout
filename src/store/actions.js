@@ -1,1 +1,3 @@
-export const NEXT_STOCK = 'NEXT_STOCK';
+export const CHANGE_LAYOUT = 'CHANGE_LAYOUT';
+export const BACK_HOME_PAGE = 'BACK_HOME_PAGE';
+export const DREAG_COMPONENT = 'DREAG_COMPONENT';
