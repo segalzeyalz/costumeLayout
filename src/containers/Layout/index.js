@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import * as actionTypes from './../../store/actions';
 import ComponentsCont from './../../containers/ComponentsCont';
-import Header from './../../components/Header';
 import CSS from './Layout.css';
 import { connect } from 'react-redux';
 
@@ -9,7 +8,6 @@ class Layout extends Component {
     render(){
         return (
         <div>
-            <Header/>
             <div className={CSS.AppContainer}>
                 <div className={CSS.Components}>
                     <ComponentsCont/>

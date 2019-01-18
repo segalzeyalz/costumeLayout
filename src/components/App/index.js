@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Link } from 'react-router-dom'
 import Layout from './../../containers/Layout'
+import Header from './../../components/Header';
+
 import CSS from './App.css';
 
 class App extends Component {
@@ -8,8 +10,11 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className={CSS.App}>
-          
-        <Route path="/" component={Layout}/>
+          <Header/>  
+          <Link to="/Header">Header</Link>
+          <Link to="/Layout">Layout</Link>
+          <Route path="/Header" component={Header}/>
+          <Route path="/Layout" component={Layout}/>
         </div>
       </BrowserRouter> 
     );
