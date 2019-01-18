@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import * as actionTypes from './../../store/actions';
 import { connect } from 'react-redux';
-import {Button} from '@material-ui/core';
+import {ButtonAppBar, DeafultButton} from './../../components/Comps/'
 import CSS from './ComponentsCont.css';
 
 class ComponentsCont extends Component {
     render(){
         return (<div className={CSS.ComponentsCont}>
-               <Button variant="contained" color="primary" >ddddddddd</Button>
+                   <ButtonAppBar position="static">AppBar</ButtonAppBar>
+                   <DeafultButton />
                 </div>)
     }
 }
