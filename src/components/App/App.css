@@ -2,26 +2,3 @@
   height:calc(100vh - 50px);
   overflow: hidden;
 }
-:local(.AppContainer){
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: stretch;
-    align-items: stretch;
-    height: 100%;
-}
-
-:local(.Components){
-    order: 0;
-    flex: 0 1 auto;
-    align-self: auto;
-    padding-right: 5px;
-    border-right: 1px solid rgba(0,0,0,.5);
-}
-
-:local(.Layouts){
-  order: 0;
-  flex: 1 1 auto;
-  align-self: auto;
-}
