@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as actionTypes from './../../store/actions';
 import ComponentsCont from './../../containers/ComponentsCont';
-import Header from './../Header';
+import Header from './../../components/Header';
 import CSS from './Layout.css';
 import { connect } from 'react-redux';
 
