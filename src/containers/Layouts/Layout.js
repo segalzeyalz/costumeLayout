@@ -11,6 +11,7 @@ class Layout extends Component {
     }
     render() {
         let {layout, idxLayout} = this.props
+        console.log(idxLayout)
         let gridStructure = layout[idxLayout].gridStructure
         //render all the object
       return (
