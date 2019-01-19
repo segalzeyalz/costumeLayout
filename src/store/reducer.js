@@ -25,7 +25,6 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 layout:layoutOutlines,
-                jsxLayout:jsxLayout
             }
     }
     return state;
