@@ -7,13 +7,13 @@ import CSS from './App.css';
 
 class App extends Component {
   render() {
+
     return (
       <BrowserRouter>
         <div className={CSS.App}>
           <Header/>  
           <Link to="/Header">Header</Link>
           <Link to="/Layout">Layout</Link>
-          <Route path="/Header" component={Header}/>
           <Route path="/Layout" component={Layout}/>
         </div>
       </BrowserRouter> 
