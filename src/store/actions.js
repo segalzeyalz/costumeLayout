@@ -1,3 +1,4 @@
 export const CHANGE_LAYOUT = 'CHANGE_LAYOUT';
 export const BACK_HOME_PAGE = 'BACK_HOME_PAGE';
-export const DREAG_COMPONENT = 'DREAG_COMPONENT';
+export const DRAG_COMPONENT = 'DRAG_COMPONENT';
+export const GET_LAYOUT = 'GET_LAYOUT';
