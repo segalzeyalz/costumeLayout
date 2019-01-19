@@ -4,7 +4,7 @@ import GridLayout from "react-grid-layout";
 import React, { Component } from 'react';
 import CSS from './Layout.css';
 
-
+//Layout after zoom in
 class Layout extends Component {
     constructor(props) {
       super(props)
@@ -12,12 +12,10 @@ class Layout extends Component {
     render() {
         let {layout, idxLayout} = this.props
         let gridStructure = layout[idxLayout].gridStructure
+        //render all the object
       return (
         <GridLayout className="layout" layout={gridStructure} cols={12} rowHeight={100} width={1500}>
-            <div className={CSS.Layout} key={'a'}>a</div>
-            <div className={CSS.Layout} key={'b'}>b</div>
-            <div className={CSS.Layout} key={'c'}>c</div>
-            <div className={CSS.Layout} key={'d'}>d</div>
+            {gridStructure.map(key=><div className={CSS.Layout} key={key.i}>{key.i}</div>)}
         </GridLayout>
       );
     }
