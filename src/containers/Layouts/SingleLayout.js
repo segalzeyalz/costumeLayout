@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ComponentsCont from './../../containers/ComponentsCont';
 import CSS from './Layout.css';
+import Layout from './Layout'
 
 class LayoutContainer extends Component {
   render() {
@@ -12,12 +13,5 @@ class LayoutContainer extends Component {
     );
   }
 }
-class Layout extends Component {
-  render() {
-    return (
-      <h1>LayOut</h1>
-    );
-  }
-}
-
 export default LayoutContainer;
+
