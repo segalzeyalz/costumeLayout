@@ -1,4 +1,4 @@
-:local(.AppContainer){
+:local(.FlexyLayout){
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

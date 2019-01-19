@@ -2,14 +2,22 @@ import React, { Component } from 'react';
 import ComponentsCont from './../../containers/ComponentsCont';
 import CSS from './Layout.css';
 
-class Layout extends Component {
+class LayoutContainer extends Component {
   render() {
     return (
       <div className={CSS.FlexyLayout}>
-          <ComponentsCont/>
+          <div className={CSS.Components}><ComponentsCont/></div>
+          <div className={CSS.Layouts}><Layout/></div>
       </div>
     );
   }
 }
+class Layout extends Component {
+  render() {
+    return (
+      <h1>LayOut</h1>
+    );
+  }
+}
 
-export default Layout;
+export default LayoutContainer;

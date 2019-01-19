@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Layouts from './../../containers/Layouts'
-import Layout from './../../containers/Layouts/SingleLayout'
+import LayoutContainer from './../../containers/Layouts/SingleLayout'
 import Header from './../../components/Header';
 
 import CSS from './App.css';
@@ -12,8 +12,11 @@ class App extends Component {
       <BrowserRouter>
         <div className={CSS.App}>
           <Header/>  
-          <Route path="/Layouts" component={Layouts}/>
-          <Route exact path="/" component={Layouts}/>
+          <Switch>
+            <Route path="/Layouts" component={Layouts}/>
+            <Route exact path="/" component={Layouts}/>
+            <Route  path="/Layout" component={LayoutContainer}/>
+          </Switch>
         </div>
       </BrowserRouter> 
     );

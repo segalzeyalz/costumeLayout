@@ -15,10 +15,10 @@ class Layouts extends Component {
             <BrowserRouter>
                 <GridLayout className="layout" layout={this.props.layoutOutlines} cols={12} rowHeight={100} width={1500}>
                     {this.props.layoutOutlines.map(elem=>
-                        <div className={CSS.Layout} key={elem.i}><Link to="/layouts/layout">{elem.i}</Link></div>
+                        <div className={CSS.Layout} key={elem.i}><Link to="/layout">{elem.i}</Link></div>
                     )}
                     <Switch>   
-                     <Route path="/layouts/layout" component={Layout} />
+                     <Route path="/layout" component={Layout} />
                     </Switch>
                 </GridLayout>
             </BrowserRouter>
