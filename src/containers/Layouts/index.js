@@ -20,7 +20,7 @@ class Layouts extends Component {
                     </Switch>
                     {this.props.layoutOutlines.map((elem,index)=>
                         <div className={CSS.Layout} key={elem.i}>
-                                <Link to={`${this.props.match.url}/layout/${index}`}>
+                                <Link to={`/layout/${index}`}>
                                     <GridLayout className="layout" layout={layOuts[index].gridStructure} cols={12} rowHeight={30} width={650}>
                                     {layOuts[index].gridStructure.map(key=>
                                         <div style="width:13%;" className={CSS.Layout} key={key.i}>

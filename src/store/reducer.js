@@ -72,9 +72,9 @@ const reducer = (state = initialState, action) => {
             let comps = clickedLayout[idxPositionKey].comps;
             //Check inside compoentns of div where the item is
             let idxToRemove = comps.findIndex(elem=>{return elem.id==action.idOfElement})
+            //remove the item clicked
             if(idxToRemove!==-1){
-                //remove the item clicked
-             comps.splice(idxToRemove,1)
+                comps.splice(idxToRemove,1)
             }
             return {
                 ...state,
