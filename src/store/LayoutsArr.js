@@ -10,7 +10,7 @@ import {
 const layoutsArr = [
         {  id:1,
         gridStructure: [
-            {i: 'a', x: 0, y: 0, w: 3, h: 2, static: true,  comps: [<SimpleTooltips/>]},
+            {i: 'a', x: 0, y: 0, w: 3, h: 2, static: true},
             {i: 'b', x: 3, y: 0, w: 4, h: 2, static: true},
             {i: 'c', x: 7, y: 0, w: 1, h: 2, static: true},
             {i: 'd', x: 8, y: 0, w: 1, h: 2, static: true},
@@ -36,7 +36,7 @@ const layoutsArr = [
         },
             { id:3,
               gridStructure: [
-                {i: 'a', x: 0, y: 0, w: 8, h: 3, static: true, comps:""},
+                {i: 'a', x: 0, y: 0, w: 8, h: 3, static: true},
                 {i: 'b', x: 8, y: 0, w: 1, h: 4, static: true},
                 {i: 'c', x: 0, y: 3, w: 8, h: 1, static: true},
                 {i: 'd', x: 0, y: 4, w: 9, h: 1, static: true},

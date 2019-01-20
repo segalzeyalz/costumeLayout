@@ -19,9 +19,10 @@ const styles = theme => ({
 
 function SimpleTooltips(props) {
   const { classes } = props;
+  let {onDrag} = props;
   return (
       <Tooltip
-      onDragStart={(e)=>console.log(e.target)}
+      onDragStart={()=>onDrag()}             
       onDragOver={(e)=>e.preventDefault()}
       draggable={true}
       title="Delete">

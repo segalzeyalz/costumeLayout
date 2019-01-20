@@ -6,20 +6,17 @@ import CSS from './Layout.css';
 
 //Layout after zoom in
 class Layout extends Component {
-    constructor(props) {
-      super(props)
-      this.onDragOver = this.onDragOver.bind(this)
-    }
-    onDragOver(ev){
-      ev.preventDefault()
-    }
     render() {
         let {layout, idxLayout} = this.props
         let {gridStructure} = layout[idxLayout]
         //render all the object
       return (
         <GridLayout className="layout" layout={gridStructure} cols={12} rowHeight={100} width={1500}>
-            {gridStructure.map(key=><div onDrop={(e)=>{console.log(key.i, idxLayout)}} onDragOver={(e)=>this.onDragOver(e)} className={CSS.Layout} key={key.i}>
+            {gridStructure.map(key=><div
+              onDrop={()=>{this.props.onDrop(idxLayout, key.i)}}
+              onDragOver={(e)=>e.preventDefault()}
+              className={CSS.Layout}
+              key={key.i}>
                 {key.comps}
             </div>)}
         </GridLayout>
@@ -35,6 +32,7 @@ class Layout extends Component {
   
   const mapDispatchToProps = dispatch => {
     return {
+      onDrop: (layoutId, positionKey) => dispatch({type:actionTypes.DROP_COMPONENT, layoutId: layoutId, positionKey:positionKey}),
     }
   }
   export default connect(mapStateToProps, mapDispatchToProps)(Layout);

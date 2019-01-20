@@ -13,10 +13,11 @@ function onDragOver(ev){
 }
 const DeafultButton = (props)=> {
   const { classes } = props;
+  let {onDrag} = props;
   return (
     <div
       draggable={true}
-      onDragStart={(e)=>console.log(e.target)}
+      onDragStart={()=>onDrag()}
       onDragOver={(ev)=>onDragOver(ev)}>
       <Button variant="contained" className={classes.button}>
         Default

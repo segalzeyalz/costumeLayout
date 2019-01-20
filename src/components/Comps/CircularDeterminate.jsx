@@ -30,9 +30,10 @@ class CircularDeterminate extends React.Component {
 
   render() {
     const { classes } = this.props;
+    let {onDrag} = this.props;
     return (
     <div 
-    onDragStart={(e)=>console.log(e.target)}
+      onDragStart={()=>onDrag()}              
       onDragOver={(e)=>e.preventDefault()}
       draggable={true}    
     >

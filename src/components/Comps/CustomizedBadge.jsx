@@ -3,12 +3,12 @@ import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
-
-const CustomizedBadge= () =>{
+const CustomizedBadge= (props) =>{
+  let {onDrag} = props;
   return (
     <IconButton
       aria-label="Cart"
-      onDragStart={(e)=>console.log(e.target)}
+      onDragStart={()=>onDrag()}
       onDragOver={(e)=>e.preventDefault()}
       draggable={true}
     >

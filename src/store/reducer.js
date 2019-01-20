@@ -25,11 +25,17 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 layout:layoutOutlines,
             }
-        case action.Drag_Over:
-            action.event.preventDefult()
+        case actionTypes.DROP_COMPONENT:
+            let {layoutId, positionKey} = action
             return {
-                ...state
+                ...state,
             }
+        case actionTypes.DRAG_COMPONENT:
+            console.log(action.comp)
+            return {
+                ...state,
+            }
+        
     }
     return state;
 };
