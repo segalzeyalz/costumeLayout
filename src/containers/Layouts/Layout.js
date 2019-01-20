@@ -11,8 +11,7 @@ class Layout extends Component {
     }
     render() {
         let {layout, idxLayout} = this.props
-        console.log(idxLayout)
-        let gridStructure = layout[idxLayout].gridStructure
+        let {gridStructure} = layout[idxLayout]
         //render all the object
       return (
         <GridLayout className="layout" layout={gridStructure} cols={12} rowHeight={100} width={1500}>
