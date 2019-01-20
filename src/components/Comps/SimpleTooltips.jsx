@@ -20,7 +20,11 @@ const styles = theme => ({
 function SimpleTooltips(props) {
   const { classes } = props;
   return (
-      <Tooltip draggable={true} title="Delete">
+      <Tooltip
+      onDragStart={(e)=>console.log(e.target)}
+      onDragOver={(e)=>e.preventDefault()}
+      draggable={true}
+      title="Delete">
         <IconButton aria-label="Delete">
           <DeleteIcon />
         </IconButton>

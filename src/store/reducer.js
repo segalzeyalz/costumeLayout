@@ -25,6 +25,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 layout:layoutOutlines,
             }
+        case action.Drag_Over:
+            action.event.preventDefult()
+            return {
+                ...state
+            }
     }
     return state;
 };
