@@ -16,6 +16,7 @@ const initialState = {
     dragComponent:''
 };
 
+
 const reducer = (state = initialState, action) => {
     let {layOuts} = state;
     switch (action.type) {
@@ -38,7 +39,8 @@ const reducer = (state = initialState, action) => {
             let gridaArr = [...newLayouts[layoutId].gridStructure];
             //Find index in the grid in order to add there
             let idxKey = gridaArr.findIndex((elem)=>{return elem.i==positionKey})
-            gridaArr[idxKey].comps= [...gridaArr[idxKey].comps, state.dragComponent]
+            //adding to comps a new compoent, with a unique id
+            gridaArr[idxKey].comps= [...gridaArr[idxKey].comps, {comp:state.dragComponent, id:makeId()}]
             newLayouts[layoutId].gridStructure = [...gridaArr]
             return {
                 ...state,
@@ -47,14 +49,26 @@ const reducer = (state = initialState, action) => {
             }
         case actionTypes.DRAG_COMPONENT:
             let {comp} = action;
-
             return {
                 ...state,
                 dragComponent:comp
+            }
+        case actionTypes.REMOVE:
+            console.log(action)
+            return {
+                ...state,
             }
         
     }
     return state;
 };
 
+function makeId(){
+    let letters = "abcdefghijklmnopqrstuvwxyzABCDEEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()1234567890"
+    let rand = ''
+    for(let i=0; i<6; i++){
+        rand +=letters[Math.floor(Math.random()*letters.length)]
+    }
+    return rand;
+}
 export default reducer;

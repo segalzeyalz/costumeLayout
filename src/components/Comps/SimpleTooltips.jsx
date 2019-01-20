@@ -20,15 +20,24 @@ const styles = theme => ({
 function SimpleTooltips(props) {
   const { classes } = props;
   let { onDrag } = props;
+  let fromComps = false;
+  console.log(props.id)
+
+  if(!onDrag){
+    onDrag = (e)=>e.preventDefault()
+    fromComps = true;
+  }
   return (
       <Tooltip
-      onDragStart={()=>onDrag()}             
-      onDragOver={(e)=>e.preventDefault()}
-      draggable={true}
-      title="Delete">
+        onClick={(e)=>console.log(e)}
+        onDragStart={(e)=>onDrag(e)}             
+        onDragOver={(e)=>e.preventDefault()}
+        draggable={true}
+        title="Delete">
         <IconButton aria-label="Delete">
           <DeleteIcon />
         </IconButton>
+
       </Tooltip>
   );
 }

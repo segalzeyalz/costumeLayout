@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import * as actionTypes from './../../store/actions';
 import GridLayout from "react-grid-layout";
 import React, { Component } from 'react';
+
 import CSS from './Layout.css';
 
 //Layout after zoom in
@@ -17,7 +18,11 @@ class Layout extends Component {
               onDragOver={(e)=>e.preventDefault()}
               className={CSS.Layout}
               key={key.i}>
-                {key.comps}
+                {key.comps.map(element=>{
+                  return React.cloneElement(
+                    element.comp, 
+                    { id: element.id, onDelete:this.props.onDelete(idxLayout, key.i, element.id) })
+                })}
             </div>)}
         </GridLayout>
       );
@@ -33,6 +38,7 @@ class Layout extends Component {
   const mapDispatchToProps = dispatch => {
     return {
       onDrop: (layoutId, positionKey) => dispatch({type:actionTypes.DROP_COMPONENT, layoutId: layoutId, positionKey:positionKey}),
+      onDelete: (layoutId, positionKey, idOfElement) => dispatch({type:actionTypes.REMOVE, layoutId: layoutId, positionKey:positionKey, idOfElement:idOfElement}),
     }
   }
   export default connect(mapStateToProps, mapDispatchToProps)(Layout);
