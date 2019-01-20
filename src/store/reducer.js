@@ -1,6 +1,13 @@
+import react , { Component}  from 'react';
+import ReactDOM from 'react-dom'
 import * as actionTypes from './actions';
 import obj from './LayoutsArr.js';
-import react , { Component}  from 'react';
+import {
+    DeafultButton,
+    CustomizedBadge,
+    CircularDeterminate,
+    ControlledOpenSelect,
+    SimpleTooltips} from './../components/Comps';
 
 const initialState = {
     layOuts:obj.layoutsArr,
@@ -23,17 +30,27 @@ const reducer = (state = initialState, action) => {
                 
             return {
                 ...state,
-                layout:layoutOutlines,
+                layout:layoutOutlines
             }
         case actionTypes.DROP_COMPONENT:
             let {layoutId, positionKey} = action
+            let newLayouts= [...layOuts];
+            let gridaArr = [...newLayouts[layoutId].gridStructure];
+            //Find index in the grid in order to add there
+            let idxKey = gridaArr.findIndex((elem)=>{return elem.i==positionKey})
+            gridaArr[idxKey].comps= [...gridaArr[idxKey].comps, state.dragComponent]
+            newLayouts[layoutId].gridStructure = [...gridaArr]
             return {
                 ...state,
+                layOuts:newLayouts,
+                dragComponent:''
             }
         case actionTypes.DRAG_COMPONENT:
-            console.log(action.comp)
+            let {comp} = action;
+
             return {
                 ...state,
+                dragComponent:comp
             }
         
     }

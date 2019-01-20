@@ -13,11 +13,11 @@ class ComponentsCont extends Component {
     render(){
         let {onDrag} = this.props;
         return (<div className={CSS.ComponentsCont}>
-                   <DeafultButton compName={DeafultButton} onDrag={()=>onDrag(DeafultButton)}/>
-                   <CustomizedBadge compName={CustomizedBadge} onDrag={()=>onDrag(CustomizedBadge)}/>
-                   <CircularDeterminate compName={CircularDeterminate} onDrag={()=>onDrag(CircularDeterminate)}/>
-                   <ControlledOpenSelect compName={ControlledOpenSelect} onDrag={()=>onDrag(ControlledOpenSelect)}/>
-                   <SimpleTooltips compName={SimpleTooltips} onDrag={()=>onDrag(SimpleTooltips)}/>
+                   <DeafultButton compName={DeafultButton} onDrag={()=>onDrag(<DeafultButton/>)}/>
+                   <CustomizedBadge compName={CustomizedBadge} onDrag={()=>onDrag(<CustomizedBadge/>)}/>
+                   <CircularDeterminate compName={CircularDeterminate} onDrag={()=>onDrag(<CircularDeterminate/>)}/>
+                   <ControlledOpenSelect compName={ControlledOpenSelect} onDrag={()=>onDrag(<ControlledOpenSelect/>)}/>
+                   <SimpleTooltips compName={SimpleTooltips} onDrag={()=>onDrag(<SimpleTooltips/>)}/>
                 </div>)
     }
 }

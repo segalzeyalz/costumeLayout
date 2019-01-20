@@ -19,7 +19,7 @@ const styles = theme => ({
 
 function SimpleTooltips(props) {
   const { classes } = props;
-  let {onDrag} = props;
+  let { onDrag } = props;
   return (
       <Tooltip
       onDragStart={()=>onDrag()}             
