@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as actionTypes from './../../store/actions';
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
+import { Route, Switch, Link } from 'react-router-dom'
 import CSS from './Layout.css';
 import GridLayout from "react-grid-layout";
 import Layout from './SingleLayout.js';
@@ -8,11 +8,11 @@ import { connect } from 'react-redux';
 
 class Layouts extends Component {
     componentWillMount(){
+        //Getting layout
         this.props.updateLayout()
     }
     render(){
         let {layOuts} =  this.props
-        console.log(this.props.match)
         return (
                 <GridLayout className="layout" layout={this.props.layoutOutlines} cols={12} rowHeight={100} width={1500}>
                     <Switch>   

@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
+import { Route, Switch, Link } from 'react-router-dom'
 import * as actionTypes from './../../store/actions';
 import GridLayout from "react-grid-layout";
 import React, { Component } from 'react';
+import Layouts from './'
 import CSS from './Layout.css';
 
 //Layout after zoom in
@@ -11,7 +13,8 @@ class Layout extends Component {
         let {gridStructure} = layout[idxLayout]
         //render all the object
       return (
-        <GridLayout className="layout" layout={gridStructure} cols={12} rowHeight={100} width={1500}>
+        <div>
+        <GridLayout className="layout" layout={gridStructure} cols={12} rowHeight={100} width={1800}>
             {gridStructure.map(key=><div
               onDrop={()=>{this.props.onDrop(idxLayout, key.i)}}
               onDragOver={(e)=>e.preventDefault()}
@@ -24,7 +27,11 @@ class Layout extends Component {
                 })}
             </div>)}
 
+            <Route path={`/`} component={Layouts} />
         </GridLayout>
+        <br/>
+            <Link to={`/`}>HOME</Link>
+        </div>
       );
     }
   }
