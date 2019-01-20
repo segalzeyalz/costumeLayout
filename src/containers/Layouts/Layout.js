@@ -8,6 +8,10 @@ import CSS from './Layout.css';
 class Layout extends Component {
     constructor(props) {
       super(props)
+      this.onDragOver = this.onDragOver.bind(this)
+    }
+    onDragOver(ev){
+      ev.preventDefault()
     }
     render() {
         let {layout, idxLayout} = this.props
@@ -15,7 +19,7 @@ class Layout extends Component {
         //render all the object
       return (
         <GridLayout className="layout" layout={gridStructure} cols={12} rowHeight={100} width={1500}>
-            {gridStructure.map(key=><div className={CSS.Layout} key={key.i}>
+            {gridStructure.map(key=><div onDrop={()=>{console.log("dropped")}} onDragOver={(e)=>this.onDragOver(e)} className={CSS.Layout} key={key.i}>
                 {key.comps}
             </div>)}
         </GridLayout>

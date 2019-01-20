@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import CSS from './Comps.css'
 
 const styles = theme => ({
   progress: {
@@ -30,12 +31,17 @@ class CircularDeterminate extends React.Component {
   render() {
     const { classes } = this.props;
     return (
+    <div 
+    draggable={true}
+    onDragStart={()=>console.log("dragged")}    
+    >
         <CircularProgress
           className={classes.progress}
           variant="determinate"
           value={this.state.completed}
           color="secondary"
         />
+      </div>
     );
   }
 }

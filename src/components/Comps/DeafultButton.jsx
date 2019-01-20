@@ -8,11 +8,15 @@ const styles = theme => ({
     margin: theme.spacing.unit,
   }
 });
-
+function onDragOver(ev){
+  ev.preventDefault()
+}
 const DeafultButton = (props)=> {
   const { classes } = props;
   return (
-    <div>
+    <div
+    draggable={true}
+    onDragStart={(e)=>console.log(e.target)} onDragOver={(ev)=>onDragOver(ev)}>
       <Button variant="contained" className={classes.button}>
         Default
       </Button>

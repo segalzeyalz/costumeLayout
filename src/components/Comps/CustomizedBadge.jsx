@@ -6,8 +6,12 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const CustomizedBadge= () =>{
   return (
-    <IconButton aria-label="Cart">
-        <ShoppingCartIcon />
+    <IconButton
+    aria-label="Cart"
+    onDragStart={()=>console.log("dragged")}
+    draggable={true}
+    >
+    <ShoppingCartIcon/>
     </IconButton>
   );
 }
