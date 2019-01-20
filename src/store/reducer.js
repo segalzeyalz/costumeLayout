@@ -54,9 +54,18 @@ const reducer = (state = initialState, action) => {
                 dragComponent:comp
             }
         case actionTypes.REMOVE:
-            console.log(action)
+            let layoutsToRemove = [...state.layOuts]
+            //Get layout clicked
+            let clickedLayout = layoutsToRemove[action.layoutId].gridStructure
+            //Get where the item
+            let idxPositionKey = clickedLayout.findIndex(elem=>action.positionKey==elem.i)
+            let comps = clickedLayout[idxPositionKey].comps;
+            //Check inside compoentns of div where the item is
+            let idxToRemove = comps.findIndex(elem=>{return elem.id==action.idOfElement})
+            comps.splice(idxToRemove,1)
             return {
                 ...state,
+                layOuts:layoutsToRemove
             }
         
     }

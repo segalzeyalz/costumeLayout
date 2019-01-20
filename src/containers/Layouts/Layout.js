@@ -21,7 +21,7 @@ class Layout extends Component {
                 {key.comps.map(element=>{
                   return React.cloneElement(
                     element.comp, 
-                    { id: element.id, onDelete:this.props.onDelete(idxLayout, key.i, element.id) })
+                    { id: element.id, onDelete:() =>this.props.onDelete(idxLayout, key.i, element.id) })
                 })}
             </div>)}
         </GridLayout>
