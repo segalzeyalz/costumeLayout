@@ -26,3 +26,12 @@
     border: 1px solid black;
     border-radius: 10px;
   }
+
+:local(.FlexyContainer){
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: stretch;
+    align-items: center;
+}
