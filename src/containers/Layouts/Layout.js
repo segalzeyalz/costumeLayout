@@ -3,7 +3,7 @@ import { Route, Switch, Link } from 'react-router-dom'
 import * as actionTypes from './../../store/actions';
 import GridLayout from "react-grid-layout";
 import React, { Component } from 'react';
-import Layouts from './'
+import App from './../../components/App'
 import CSS from './Layout.css';
 
 //Layout after zoom in
@@ -27,7 +27,7 @@ class Layout extends Component {
                 })}
             </div>)}
 
-            <Route path={`/`} component={Layouts} />
+            <Route path={`/`} component={App} />
         </GridLayout>
         <br/>
             <Link to={`/`}>HOME</Link>
