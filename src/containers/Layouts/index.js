@@ -11,11 +11,16 @@ class Layouts extends Component {
         this.props.updateLayout()
     }
     render(){
+        let {layOuts} =  this.props
         return (
             <BrowserRouter>
                 <GridLayout className="layout" layout={this.props.layoutOutlines} cols={12} rowHeight={100} width={1500}>
-                    {this.props.layoutOutlines.map(elem=>
-                        <div className={CSS.Layout} key={elem.i}><Link to="/layout">{elem.i}</Link></div>
+                    {this.props.layoutOutlines.map((elem,index)=>
+                        <div className={CSS.Layout} key={elem.i}>
+                            <GridLayout className="layout" layout={layOuts[index].gridStructure} cols={12} rowHeight={30} width={650}>
+                                {layOuts[index].gridStructure.map(key=><div className={CSS.Layout} key={key.i}>{key.i}</div>)}
+                             </GridLayout>
+                        </div>
                     )}
                     <Switch>   
                      <Route path="/layout" component={Layout} />
@@ -29,6 +34,7 @@ class Layouts extends Component {
 const mapStateToProps = state => {
     return {
         layoutOutlines: state.layout,
+        layOuts:state.layOuts
     };
   };
   
