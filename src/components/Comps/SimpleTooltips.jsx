@@ -21,8 +21,6 @@ function SimpleTooltips(props) {
   const { classes } = props;
   let { onDrag } = props;
   let fromComps = false;
-  console.log(props.id)
-
   if(!onDrag){
     onDrag = (e)=>e.preventDefault()
     fromComps = true;

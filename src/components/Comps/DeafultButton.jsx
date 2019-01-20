@@ -13,7 +13,6 @@ function onDragOver(ev){
   ev.preventDefault()
 }
 const DeafultButton = (props)=> {
-  console.log(props)
   const { classes } = props;
   let { onDrag } = props;
   let fromComps = false;
