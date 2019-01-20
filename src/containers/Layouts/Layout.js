@@ -2,12 +2,11 @@ import { connect } from 'react-redux';
 import * as actionTypes from './../../store/actions';
 import GridLayout from "react-grid-layout";
 import React, { Component } from 'react';
-
 import CSS from './Layout.css';
 
 //Layout after zoom in
 class Layout extends Component {
-    render() {
+  render(props) {
         let {layout, idxLayout} = this.props
         let {gridStructure} = layout[idxLayout]
         //render all the object
@@ -24,6 +23,7 @@ class Layout extends Component {
                     { id: element.id, onDelete:() =>this.props.onDelete(idxLayout, key.i, element.id) })
                 })}
             </div>)}
+
         </GridLayout>
       );
     }

@@ -13,9 +13,8 @@ class App extends Component {
         <div className={CSS.App}>
           <Header/>  
           <Switch>
-            <Route path="/Layouts" component={Layouts}/>
             <Route exact path="/" component={Layouts}/>
-            <Route  path="/Layout" component={LayoutContainer}/>
+            <Route path="/Layout/:id" component={LayoutContainer}/>
           </Switch>
         </div>
       </BrowserRouter> 

@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import ComponentsCont from './../../containers/ComponentsCont';
+import { connect } from 'react-redux';
+import * as actionTypes from './../../store/actions';
 import CSS from './Layout.css';
 import Layout from './Layout'
 
 class LayoutContainer extends Component {
+  componentWillMount(){
+    this.props.getLayout(this.props.match.params.id)
+  }
   render() {
     return (
       <div className={CSS.FlexyLayout}>
@@ -13,5 +18,11 @@ class LayoutContainer extends Component {
     );
   }
 }
-export default LayoutContainer;
 
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getLayout: (layoutId) => dispatch({type:actionTypes.CHANGE_LAYOUT, id: layoutId}),
+  }
+}
+export default connect(null, mapDispatchToProps)(LayoutContainer);

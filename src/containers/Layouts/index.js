@@ -15,10 +15,13 @@ class Layouts extends Component {
         console.log(this.props.match)
         return (
                 <GridLayout className="layout" layout={this.props.layoutOutlines} cols={12} rowHeight={100} width={1500}>
+                    <Switch>   
+                     <Route path={`${this.props.match.url}/layout/:id`} component={Layout} />
+                    </Switch>
                     {this.props.layoutOutlines.map((elem,index)=>
                         <div className={CSS.Layout} key={elem.i}>
-                            <Link to={`/layout${elem.i}`}>
-                                <GridLayout className="layout" layout={layOuts[index].gridStructure} cols={12} rowHeight={30} width={650}>
+                                <Link to={`${this.props.match.url}/layout/${index}`}>
+                                    <GridLayout className="layout" layout={layOuts[index].gridStructure} cols={12} rowHeight={30} width={650}>
                                     {layOuts[index].gridStructure.map(key=>
                                         <div style="width:13%;" className={CSS.Layout} key={key.i}>
                                             <div className={CSS.FlexyContainer}>
@@ -31,14 +34,7 @@ class Layouts extends Component {
                         </div>
                                 
                     )}
-                    <Switch>   
-                     <Route path="/layout" component={Layout} />
-                     <Route path={`${this.props.match.url}/Layout:id(\\d+)`} component={Layout} />
-                    <Route
-                        path={this.props.match.url}
-                        render={() => <h3>Please select a message</h3>}
-                    />
-                    </Switch>
+                    
                 </GridLayout>
         )
     }

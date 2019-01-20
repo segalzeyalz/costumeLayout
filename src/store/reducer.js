@@ -12,7 +12,7 @@ import {
 const initialState = {
     layOuts:obj.layoutsArr,
     layout:[],
-    selectedLayout:5,
+    selectedLayout:0,
     dragComponent:''
 };
 
@@ -23,9 +23,9 @@ const reducer = (state = initialState, action) => {
             // Rendering each layout
                 let layoutOutlines = [];
                 for(let i=0;i<6;i++) {
-                    let newY = (parseInt(i/4))*2;
                     let newX = (i%4)*4
-                    layoutOutlines = [...layoutOutlines, {i: 'a'+(i+1), x: newX, y: newY, w: 4, h: 2, static: true}];
+                    let newY = (parseInt(i/4))*2;
+                    layoutOutlines = [...layoutOutlines, {i: 'a'+i, x: newX, y: newY, w: 4, h: 2, static: true, routeTo:i}];
                 }
                 
             return {
@@ -45,6 +45,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 layOuts:newLayouts,
                 dragComponent:''
+            }
+        case actionTypes.CHANGE_LAYOUT:
+            return {
+                ...state,
+                selectedLayout:action.id
             }
         case actionTypes.DRAG_COMPONENT:
             let {comp} = action;
