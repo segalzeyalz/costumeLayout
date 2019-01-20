@@ -15,7 +15,9 @@ class Layout extends Component {
         //render all the object
       return (
         <GridLayout className="layout" layout={gridStructure} cols={12} rowHeight={100} width={1500}>
-            {gridStructure.map(key=><div className={CSS.Layout} key={key.i}>{key.i}</div>)}
+            {gridStructure.map(key=><div className={CSS.Layout} key={key.i}>
+                {key.comps}
+            </div>)}
         </GridLayout>
       );
     }

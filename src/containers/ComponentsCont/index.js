@@ -9,7 +9,7 @@ import {ButtonAppBar,
         CircularDeterminate,
         ControlledOpenSelect,
         CustomizedSnackbars,
-        SimpleTooltips} from './../../components/Comps/'
+        SimpleTooltips} from './../../components/Comps/';
 
 class ComponentsCont extends Component {
     render(){
