@@ -12,7 +12,7 @@ import {
 const initialState = {
     layOuts:obj.layoutsArr,
     layout:[],
-    selectedLayout:0,
+    selectedLayout:5,
     dragComponent:''
 };
 

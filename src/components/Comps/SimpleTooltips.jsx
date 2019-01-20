@@ -29,7 +29,7 @@ function SimpleTooltips(props) {
   }
   return (
       <Tooltip
-        onClick={(e)=>console.log(e)}
+        onClick={()=>props.onDelete? props.onDelete():null}                
         onDragStart={(e)=>onDrag(e)}             
         onDragOver={(e)=>e.preventDefault()}
         draggable={true}

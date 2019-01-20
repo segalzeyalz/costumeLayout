@@ -4,8 +4,6 @@ import Badge from '@material-ui/core/Badge';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const CustomizedBadge= (props) =>{
-  console.log(props.id)
-
   let {onDrag} = props;
   if(!onDrag){
     onDrag = (e)=>e.preventDefault()
@@ -13,7 +11,7 @@ const CustomizedBadge= (props) =>{
   return (
     <IconButton
       aria-label="Cart"
-      onClick={(e)=>console.log(e.target)}
+      onClick={()=>props.onDelete? props.onDelete():null}        
       onDragStart={(e)=>onDrag(e)}
       onDragOver={(e)=>e.preventDefault()}
       draggable={true}

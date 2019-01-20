@@ -18,7 +18,8 @@ class Layouts extends Component {
                     {this.props.layoutOutlines.map((elem,index)=>
                         <div className={CSS.Layout} key={elem.i}>
                             <GridLayout className="layout" layout={layOuts[index].gridStructure} cols={12} rowHeight={30} width={650}>
-                                {layOuts[index].gridStructure.map(key=><div style="width:13%;" className={CSS.Layout} key={key.i}>
+                                {layOuts[index].gridStructure.map(key=>
+                                <div style="width:13%;" className={CSS.Layout} key={key.i}>
                                     <div className={CSS.FlexyContainer}>
                                         {key.comps}
                                      </div>

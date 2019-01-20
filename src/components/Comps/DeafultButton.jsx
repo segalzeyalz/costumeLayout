@@ -26,7 +26,9 @@ const DeafultButton = (props)=> {
       draggable={true}
       onDragStart={(e)=>onDrag(e)}
       onDragOver={(ev)=>onDragOver(ev)}>
-      <Button onClick={()=>props.onDelete()} variant="contained" className={classes.button}>
+      <Button 
+        onClick={()=>props.onDelete? props.onDelete():null}        
+        variant="contained" className={classes.button}>
         Default
       </Button>
     </div>

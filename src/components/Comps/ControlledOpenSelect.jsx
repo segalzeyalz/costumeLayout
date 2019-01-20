@@ -37,8 +37,6 @@ class ControlledOpenSelect extends React.Component {
   };
 
   render() {
-    console.log(this.props.id)
-
     const { classes } = this.props;
     let {onDrag} = this.props;
     if(!onDrag){
@@ -46,6 +44,7 @@ class ControlledOpenSelect extends React.Component {
     }
     return (
         <FormControl
+        onClick={()=>this.props.onDelete? this.props.onDelete():null}        
         onDragStart={(e)=>onDrag(e)}        
         onDragOver={(e)=>e.preventDefault()}
          draggable={true}

@@ -36,12 +36,13 @@ class CircularDeterminate extends React.Component {
     }
     return (
     <div
-      onClick={(e)=>console.log(e)}
+    onClick={()=>this.props.onDelete? this.props.onDelete():null}        
       onDragStart={(e)=>onDrag(e)}              
       onDragOver={(e)=>e.preventDefault()}
       draggable={true}    
     >
         <CircularProgress
+        onClick={()=>this.props.onDelete? this.props.onDelete():null}        
           className={classes.progress}
           variant="determinate"
           value={this.state.completed}
