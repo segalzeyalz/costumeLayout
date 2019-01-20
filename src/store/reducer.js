@@ -47,9 +47,15 @@ const reducer = (state = initialState, action) => {
                 dragComponent:''
             }
         case actionTypes.CHANGE_LAYOUT:
+            let chosenIdLayout = action.id;
+            //can use only layout on the range
+            if(chosenIdLayout>=state.layOuts.length){
+                chosenIdLayout=state.layOuts.length-1;
+            }
+
             return {
                 ...state,
-                selectedLayout:action.id
+                selectedLayout:chosenIdLayout
             }
         case actionTypes.DRAG_COMPONENT:
             let {comp} = action;
