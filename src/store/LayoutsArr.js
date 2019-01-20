@@ -43,7 +43,14 @@ const layoutsArr = [
                     {i: 'b', x: 0, y: 3, w: 9, h: 1, static: true},
                     {i: 'c', x: 0, y: 4, w: 5, h: 1, static: true},
                     {i: 'd', x: 5, y: 4, w: 4, h: 1, static: true},
-                    ]}
+                ]},
+                    { id:6,
+                    gridStructure: [
+                        {i: 'a', x: 0, y: 0, w: 3, h: 4, static: true},
+                        {i: 'b', x: 3, y: 0, w: 6, h: 4, static: true},
+                        {i: 'c', x: 0, y: 4, w: 5, h: 1, static: true},
+                        {i: 'd', x: 5, y: 4, w: 4, h: 1, static: true},
+                ]}
 ];
 
 export default {layoutsArr};

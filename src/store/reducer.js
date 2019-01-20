@@ -5,7 +5,7 @@ import react , { Component}  from 'react';
 const initialState = {
     layOuts:obj.layoutsArr,
     layout:[],
-    selectedLayout:4
+    selectedLayout:5
 };
 
 const reducer = (state = initialState, action) => {
