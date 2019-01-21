@@ -10,6 +10,9 @@ import {
         SimpleTooltips} from './../../components/Comps/';
 
 class ComponentsCont extends Component {
+  componentWillUpdate(){
+    return false;
+  }
     render(){
         let {onDrag} = this.props;
         return (<div className={CSS.ComponentsCont}>

@@ -5,11 +5,12 @@ import CSS from './Layout.css';
 import GridLayout from "react-grid-layout";
 import Layout from './SingleLayout.js';
 import { connect } from 'react-redux';
-import {DeafultButton,
-    CustomizedBadge,
-    CircularDeterminate,
-    ControlledOpenSelect,
-    SimpleTooltips} from './../../components/Comps/'
+import {
+        DeafultButton,
+        CustomizedBadge,
+        CircularDeterminate,
+        ControlledOpenSelect,
+        SimpleTooltips} from './../../components/Comps/'
 
 class Layouts extends Component {
     componentWillMount(){
@@ -25,7 +26,7 @@ class Layouts extends Component {
                         <div className={CSS.Layout} key={elem.i}>
                         <Link to={`/layout/${index}`}>
                             <GridLayout className="layout" layout={layOuts[index].gridStructure} cols={12} rowHeight={25} width={500}>
-                            {layOuts[index].gridStructure.map((key,idx)=> {console.log(key.comps.length>0)
+                            {layOuts[index].gridStructure.map((key,idx)=> {
                                 return <div style="width:13%;" className={CSS.Layout} key={key.i}>
                                 <div className={CSS.FlexyContainer}>
                                  {key.comps &&key.comps.length>0? key.comps.map(elem=>elem.comp):null}

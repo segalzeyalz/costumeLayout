@@ -56,7 +56,7 @@ const reducer = (state = initialState, action) => {
                 selectedLayout:chosenIdLayout
             }
         case actionTypes.DRAG_COMPONENT:
-            let {comp} = action;
+            let { comp } = action;
             return {
                 ...state,
                 dragComponent:comp
@@ -84,6 +84,7 @@ const reducer = (state = initialState, action) => {
 };
 
 function makeId(){
+    //Function create a unique id
     let letters = "abcdefghijklmnopqrstuvwxyzABCDEEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()1234567890"
     let rand = ''
     for(let i=0; i<6; i++){
