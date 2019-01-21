@@ -27,10 +27,8 @@ class Layouts extends Component {
                         <Link to={`/layout/${index}`}>
                             <GridLayout className="layout" layout={layOuts[index].gridStructure} cols={12} rowHeight={25} width={500}>
                             {layOuts[index].gridStructure.map((key,idx)=> {
-                                return <div style="width:13%;" className={CSS.Layout} key={key.i}>
-                                <div className={CSS.FlexyContainer}>
+                                return <div className={CSS.Layout} key={key.i}>
                                  {key.comps &&key.comps.length>0? key.comps.map(elem=>elem.comp):null}
-                                </div>
                                 </div>})
                             }
                             </GridLayout>
