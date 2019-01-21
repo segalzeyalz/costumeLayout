@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import * as actionTypes from './../../store/actions';
+import * as actionTypes from './../../constants/actionType';
 import { Route, Switch, Link } from 'react-router-dom'
 import CSS from './Layout.css';
 import GridLayout from "react-grid-layout";

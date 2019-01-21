@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch, Link } from 'react-router-dom'
-import * as actionTypes from './../../store/actions';
+import * as actionTypes from './../../constants/actionType';
 import GridLayout from "react-grid-layout";
 import Card from '@material-ui/core/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

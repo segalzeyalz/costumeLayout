@@ -1,6 +1,6 @@
 import react , { Component}  from 'react';
 import ReactDOM from 'react-dom'
-import * as actionTypes from './actions';
+import * as actionTypes from './../constants/actionType';
 import obj from './LayoutsArr.js';
 import {
     DeafultButton,

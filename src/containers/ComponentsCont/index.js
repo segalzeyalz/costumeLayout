@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import * as actionTypes from './../../store/actions';
+import * as actionTypes from './../../constants/actionType';
 import { connect } from 'react-redux';
 import CSS from './ComponentsCont.css';
 import {
