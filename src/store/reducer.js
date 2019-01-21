@@ -21,10 +21,11 @@ const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.GET_LAYOUT:
             // Rendering each layout
-            let layoutOutlines = [];
-            for(let i=0;i<6;++i) {
-                layoutOutlines = [...layoutOutlines, {routeTo:i}];
-            }
+                let layoutOutlines = [];
+                for(let i=0;i<6;++i) {
+                    layoutOutlines = [...layoutOutlines, {i: 'a'+i, routeTo:i}];
+                }
+                
             return {
                 ...state,
                 layout:layoutOutlines

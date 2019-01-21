@@ -17,9 +17,26 @@
 }
 
 :local(.Container *){
-    width:26%;
+    width:28%;
 }
-
+:local(.Footer){
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+}
+:local(.Link){
+    text-decoration: none;
+    font-family: "roboto", sans-serif;
+    font-size: 20px;
+    color:#0074D9;
+    font-weight: 700;
+}
+:local(.Link:hover){
+    color:#3D9970;
+}
 :local(.Components){
     order: 0;
     flex: 0 1 auto;

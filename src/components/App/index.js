@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Layouts from './../../containers/Layouts'
 import LayoutContainer from './../../containers/Layouts/SingleLayout'
 import Header from './../../components/Header';
-
 import CSS from './App.css';
 
 class App extends Component {

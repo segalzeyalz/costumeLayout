@@ -18,20 +18,21 @@ class Layouts extends Component {
     }
     render(){
         let {layOuts} =  this.props
+        //Render all layouts
         return (
                 <div className={CSS.Container}>
                     {this.props.layoutOutlines.map((elem,index)=>
                         <div className={CSS.Layout} key={elem.i}>
                         <Link to={`/layout/${index}`}>
-                        <GridLayout className="layout" layout={layOuts[index].gridStructure} cols={12} rowHeight={25} width={500}>
-                        {layOuts[index].gridStructure.map((key,idx)=> {console.log(key.comps[idx]? key.comps[idx].comp:null)
-                            return <div style="width:13%;" className={CSS.Layout} key={key.i}>
-                            <div className={CSS.FlexyContainer}>
-                            {key.comps[idx]? key.comps[idx].comp:null}
-                            </div>
-                            </div>})
-                        }
-                        </GridLayout>
+                            <GridLayout className="layout" layout={layOuts[index].gridStructure} cols={12} rowHeight={25} width={500}>
+                            {layOuts[index].gridStructure.map((key,idx)=> {console.log(key.comps.length>0)
+                                return <div style="width:13%;" className={CSS.Layout} key={key.i}>
+                                <div className={CSS.FlexyContainer}>
+                                 {key.comps &&key.comps.length>0? key.comps.map(elem=>elem.comp):null}
+                                </div>
+                                </div>})
+                            }
+                            </GridLayout>
                         </Link>
                         </div>
                         
@@ -39,7 +40,6 @@ class Layouts extends Component {
                     <Switch>   
                          <Route path={`${this.props.match.url}/layout/:id`} component={Layout} />
                     </Switch>
-                    
                 </div>
         )
     }
