@@ -1,12 +1,13 @@
 import React from 'react';
 import CSS from './Header.css';
+import Card from '@material-ui/core/Card';
 
 //Static function for header - For not rendering it not unnecessary
 const Header = () => {
-  return <div className={CSS.Header}>
+  return <Card>
             <h1 className={CSS.title}>
               Costume Layout
             </h1>
-          </div>
+          </Card>
 };
 export default Header;

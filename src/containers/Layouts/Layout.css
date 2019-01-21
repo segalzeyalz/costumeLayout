@@ -7,6 +7,18 @@
     align-items: stretch;
     height: 100%;
 }
+:local(.Container){
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: stretch;
+    align-items: center;
+}
+
+:local(.Container *){
+    width:26%;
+}
 
 :local(.Components){
     order: 0;
