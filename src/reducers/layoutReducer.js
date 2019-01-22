@@ -1,5 +1,4 @@
-import {GET_LAYOUT, CHANGE_LAYOUT} from './../constants/actionTypes';
-import obj from './../constants/layoutsArr';
+import { GET_LAYOUT, CHANGE_LAYOUT } from './../constants/actionTypes';
 
 const initialState = {
     selectedLayout:0,
