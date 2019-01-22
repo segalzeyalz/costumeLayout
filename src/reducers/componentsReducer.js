@@ -1,6 +1,6 @@
 import react , { Component}  from 'react';
 import ReactDOM from 'react-dom'
-import * as actionTypes from './../constants/actionTypes';
+import { DROP_COMPONENT, DRAG_COMPONENT, REMOVE } from './../constants/actionTypes';
 import obj from './../constants/layoutsArr';
 import {
     DeafultButton,
@@ -17,7 +17,7 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     let {layOuts} = state;
     switch (action.type) {
-        case actionTypes.DROP_COMPONENT:
+        case DROP_COMPONENT:
             let {layoutId, positionKey} = action
             let newLayouts= [...layOuts];
             let gridaArr = [...newLayouts[layoutId].gridStructure];
@@ -31,13 +31,13 @@ const reducer = (state = initialState, action) => {
                 layOuts:newLayouts,
                 dragComponent:''
             }
-        case actionTypes.DRAG_COMPONENT:
+        case DRAG_COMPONENT:
             let { comp } = action;
             return {
                 ...state,
                 dragComponent:comp
             }
-        case actionTypes.REMOVE:
+        case REMOVE:
             let layoutsToRemove = [...state.layOuts]
             //Get layout clicked
             let clickedLayout = layoutsToRemove[action.layoutId].gridStructure

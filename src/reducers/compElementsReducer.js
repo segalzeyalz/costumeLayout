@@ -1,14 +1,11 @@
 import * as actionTypes from './../constants/actionTypes';
 
 const initialState = {
-    
+    completed:0
 };
 
 const reducer = (state = initialState, action) => {
-    let {layOuts} = state;
     switch (action.type) {
-       
-        
     }
     return state;
 };
