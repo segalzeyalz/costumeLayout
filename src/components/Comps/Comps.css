@@ -1,4 +1,4 @@
-:local(.FlexyContainer){
+:local(.FlexyContainer) {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -6,7 +6,8 @@
     align-content: stretch;
     align-items: center;
 }
-:local(.FlexyContainer *){
+
+:local(.FlexyContainer *) {
     order: 0;
     flex: 0 1 auto;
     align-self: auto;

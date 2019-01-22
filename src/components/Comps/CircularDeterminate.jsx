@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import {
+  withStyles
+} from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import CSS from './Comps.css'
 
@@ -24,31 +26,34 @@ class CircularDeterminate extends React.Component {
   }
 
   progress = () => {
-    const { completed } = this.state;
-    this.setState({ completed: completed >= 100 ? 0 : completed + 1 });
+    const {
+      completed
+    } = this.state;
+    this.setState({
+      completed: completed >= 100 ? 0 : completed + 1
+    });
   };
 
   render() {
-    const { classes } = this.props;
-    let {onDrag} = this.props;
-    if(!onDrag){
-      onDrag = (e)=>e.preventDefault()
+    const {
+      classes
+    } = this.props;
+    let {
+      onDrag
+    } = this.props;
+    if (!onDrag) {
+      onDrag = (e) => e.preventDefault()
     }
-    return (
-    <div
-    onClick={()=>this.props.onDelete? this.props.onDelete():null}        
-      onDragStart={(e)=>onDrag(e)}              
-      onDragOver={(e)=>e.preventDefault()}
-      draggable={true}    
-    >
-        <CircularProgress
-        onClick={()=>this.props.onDelete? this.props.onDelete():null}        
-          className={classes.progress}
-          variant="determinate"
-          value={this.state.completed}
-          color="secondary"
-        />
-      </div>
+    return ( <div onClick = {() => this.props.onDelete ? this.props.onDelete() : null}
+              onDragStart = {(e) => onDrag(e)}
+              onDragOver = {(e) => e.preventDefault()} draggable = {true} >
+              <CircularProgress
+                onClick = {() => this.props.onDelete ? this.props.onDelete() : null}
+                className = {classes.progress}
+                variant = "determinate"
+                value = {this.state.completed}
+                color = "secondary" />
+            </div>
     );
   }
 }

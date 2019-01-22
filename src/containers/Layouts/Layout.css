@@ -1,4 +1,4 @@
-:local(.FlexyLayout){
+:local(.FlexyLayout) {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -7,7 +7,8 @@
     align-items: stretch;
     height: 100%;
 }
-:local(.Container){
+
+:local(.Container) {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -16,10 +17,11 @@
     align-items: center;
 }
 
-:local(.Container *){
-    width:28%;
+:local(.Container *) {
+    width: 28%;
 }
-:local(.Footer){
+
+:local(.Footer) {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -27,36 +29,39 @@
     align-content: stretch;
     align-items: center;
 }
-:local(.Link){
+
+:local(.Link) {
     text-decoration: none;
     font-family: "roboto", sans-serif;
     font-size: 20px;
-    color:#0074D9;
+    color: #0074D9;
     font-weight: 700;
 }
-:local(.Link:hover){
-    color:#3D9970;
+
+:local(.Link:hover) {
+    color: #3D9970;
 }
-:local(.Components){
+
+:local(.Components) {
     order: 0;
     flex: 0 1 auto;
     align-self: auto;
     padding-right: 5px;
-    border-right: 1px solid rgba(0,0,0,.5);
+    border-right: 1px solid rgba(0, 0, 0, .5);
 }
 
-:local(.Layouts){
-  order: 0;
-  flex: 1 1 auto;
-  align-self: auto;
+:local(.Layouts) {
+    order: 0;
+    flex: 1 1 auto;
+    align-self: auto;
 }
 
-:local(.Layout){
+:local(.Layout) {
     border: 1px solid black;
     border-radius: 10px;
-  }
+}
 
-:local(.FlexyContainer){
+:local(.FlexyContainer) {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -64,7 +69,8 @@
     align-content: stretch;
     align-items: center;
 }
-:local(.FlexyContainer *){
+
+:local(.FlexyContainer *) {
     order: 0;
     flex: 0 1 auto;
     align-self: auto;
