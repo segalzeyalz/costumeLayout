@@ -1,4 +1,4 @@
-import * as actionTypes from './../constants/actionTypes';
+import {GET_LAYOUT, CHANGE_LAYOUT} from './../constants/actionTypes';
 import obj from './../constants/layoutsArr';
 
 const initialState = {
@@ -8,7 +8,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionTypes.GET_LAYOUT:
+        case GET_LAYOUT:
             // Rendering each layout
                 let layoutOutlines = [];
                 for(let i=0;i<6;++i) {
@@ -18,7 +18,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 layout:layoutOutlines
             }
-        case actionTypes.CHANGE_LAYOUT:
+        case CHANGE_LAYOUT:
             let chosenIdLayout = action.id;
             //can use only layout on the range
             return {
