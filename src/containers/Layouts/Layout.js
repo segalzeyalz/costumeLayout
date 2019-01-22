@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch, Link } from 'react-router-dom'
-import * as actionTypes from './../../constants/actionType';
+import * as actionTypes from './../../constants/actionTypes';
 import GridLayout from "react-grid-layout";
 import Card from '@material-ui/core/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -44,9 +44,10 @@ class Layout extends Component {
     }
   }
   const mapStateToProps = state => {
+    console.log(state)
     return {
-      layout: state.layOuts,
-      idxLayout:state.selectedLayout
+      layout: state.components.layOuts,
+      idxLayout:state.layout.selectedLayout
     };
   };
   

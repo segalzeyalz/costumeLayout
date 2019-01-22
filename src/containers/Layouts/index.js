@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import * as actionTypes from './../../constants/actionType';
+import * as actionTypes from './../../constants/actionTypes';
 import { Route, Switch, Link } from 'react-router-dom'
 import CSS from './Layout.css';
 import GridLayout from "react-grid-layout";
@@ -46,8 +46,8 @@ class Layouts extends Component {
 
 const mapStateToProps = state => {
     return {
-        layoutOutlines: state.layout,
-        layOuts:state.layOuts
+        layoutOutlines: state.layout.layout,
+        layOuts:state.components.layOuts
     };
   };
   

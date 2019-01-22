@@ -1,7 +1,7 @@
 import react , { Component}  from 'react';
 import ReactDOM from 'react-dom'
-import * as actionTypes from './../constants/actionType';
-import obj from './LayoutsArr.js';
+import * as actionTypes from './../constants/actionTypes';
+import obj from './../constants/layoutsArr';
 import {
     DeafultButton,
     CustomizedBadge,
@@ -11,25 +11,12 @@ import {
 
 const initialState = {
     layOuts:obj.layoutsArr,
-    layout:[],
-    selectedLayout:0,
     dragComponent:''
 };
 
 const reducer = (state = initialState, action) => {
     let {layOuts} = state;
     switch (action.type) {
-        case actionTypes.GET_LAYOUT:
-            // Rendering each layout
-                let layoutOutlines = [];
-                for(let i=0;i<6;++i) {
-                    layoutOutlines = [...layoutOutlines, {i: 'a'+i, routeTo:i}];
-                }
-                
-            return {
-                ...state,
-                layout:layoutOutlines
-            }
         case actionTypes.DROP_COMPONENT:
             let {layoutId, positionKey} = action
             let newLayouts= [...layOuts];
@@ -43,17 +30,6 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 layOuts:newLayouts,
                 dragComponent:''
-            }
-        case actionTypes.CHANGE_LAYOUT:
-            let chosenIdLayout = action.id;
-            //can use only layout on the range
-            if(chosenIdLayout>=state.layOuts.length){
-                chosenIdLayout=state.layOuts.length-1;
-            }
-
-            return {
-                ...state,
-                selectedLayout:chosenIdLayout
             }
         case actionTypes.DRAG_COMPONENT:
             let { comp } = action;

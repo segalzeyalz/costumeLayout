@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch, Link } from 'react-router-dom'
 import ComponentsCont from './../../containers/ComponentsCont';
 import { connect } from 'react-redux';
-import * as actionTypes from './../../constants/actionType';
+import * as actionTypes from './../../constants/actionTypes';
 import CSS from './Layout.css';
 import Layout from './Layout';
 
