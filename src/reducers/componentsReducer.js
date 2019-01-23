@@ -42,16 +42,11 @@ const reducer = (state = initialState, action) => {
             //Get layout clicked
             let clickedLayout = layoutsToRemove[action.layoutId].gridStructure
             //Get where the item
-            let idxPositionKey = clickedLayout.findIndex(elem => action.positionKey == elem.i)
+            let idxPositionKey = clickedLayout.findIndex(elem => action.positionKey === elem.i)
             let comps = clickedLayout[idxPositionKey].comps;
-            //Check inside compoentns of div where the item is
-            let idxToRemove = comps.findIndex(elem => {
-                return elem.id === action.idOfElement
-            })
-            //remove the item clicked
-            if (idxToRemove !== -1) {
-                comps.splice(idxToRemove, 1)
-            }
+
+            //Filter only elements are inequal the removed one
+            clickedLayout[idxPositionKey].comps = comps.filter(elem =>  elem.id !== action.idOfElement)
             return {
                 ...state,
                 layOuts: layoutsToRemove
