@@ -1,5 +1,4 @@
 import React from 'react';
-import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -15,10 +14,8 @@ function onDragOver(ev){
 const DeafultButton = (props)=> {
   const { classes } = props;
   let { onDrag } = props;
-  let fromComps = false;
-  if(!onDrag){
+  if (!onDrag){
     onDrag = (e)=>e.preventDefault()
-    fromComps = true;
   }
   return (
     <div id={props.id}
@@ -26,7 +23,7 @@ const DeafultButton = (props)=> {
       onDragStart={(e)=>onDrag(e)}
       onDragOver={(ev)=>onDragOver(ev)}>
       <Button 
-        onClick={()=>props.onDelete? props.onDelete():null}        
+        onClick={()=>{return props.onDelete? props.onDelete():null}}        
         variant="contained" className={classes.button}>
         Default
       </Button>
@@ -36,6 +33,9 @@ const DeafultButton = (props)=> {
 
 DeafultButton.propTypes = {
   classes: PropTypes.object.isRequired,
+  onDrag: PropTypes.func,
+  onDelete: PropTypes.func,
+  id: PropTypes.string
 };
 
 export default withStyles(styles)(DeafultButton);

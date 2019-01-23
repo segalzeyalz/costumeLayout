@@ -10,7 +10,7 @@ import {
         SimpleTooltips} from './../../components/Comps/';
 
 class ComponentsCont extends Component {
-  componentWillUpdate(){
+  UNSAFE_componentWillUpdate(){
     return false;
   }
     render(){

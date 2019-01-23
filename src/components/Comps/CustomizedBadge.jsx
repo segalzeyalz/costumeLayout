@@ -1,17 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import IconButton from '@material-ui/core/IconButton';
-import Badge from '@material-ui/core/Badge';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const CustomizedBadge= (props) =>{
   let {onDrag} = props;
-  if(!onDrag){
+  if (!onDrag) {
     onDrag = (e)=>e.preventDefault()
   }
   return (
     <IconButton
       aria-label="Cart"
-      onClick={()=>props.onDelete? props.onDelete():null}        
+      onClick={()=> {return props.onDelete ? props.onDelete() : null}}        
       onDragStart={(e)=>onDrag(e)}
       onDragOver={(e)=>e.preventDefault()}
       draggable={true}
@@ -20,5 +20,9 @@ const CustomizedBadge= (props) =>{
     </IconButton>
   );
 }
+CustomizedBadge.propTypes = {
+  onDelete: PropTypes.func,
+  onDrag: PropTypes.func,
+};
 
 export default CustomizedBadge;

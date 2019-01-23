@@ -1,0 +1,1 @@
+export const COMPLETE_CIRCLE = 'COMPLETE_CIRCLE';

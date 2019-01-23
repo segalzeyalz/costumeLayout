@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Fab from '@material-ui/core/Fab';
 import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
@@ -18,16 +17,13 @@ const styles = theme => ({
 });
 
 function SimpleTooltips(props) {
-  const { classes } = props;
   let { onDrag } = props;
-  let fromComps = false;
-  if(!onDrag){
+  if (!onDrag) {
     onDrag = (e)=>e.preventDefault()
-    fromComps = true;
   }
   return (
       <Tooltip
-        onClick={()=>props.onDelete? props.onDelete():null}                
+        onClick={()=> {return props.onDelete? props.onDelete():null}}                
         onDragStart={(e)=>onDrag(e)}             
         onDragOver={(e)=>e.preventDefault()}
         draggable={true}
@@ -35,13 +31,14 @@ function SimpleTooltips(props) {
         <IconButton aria-label="Delete">
           <DeleteIcon />
         </IconButton>
-
       </Tooltip>
   );
 }
 
 SimpleTooltips.propTypes = {
   classes: PropTypes.object.isRequired,
+  onDrag: PropTypes.func,
+  onDelete:PropTypes.func
 };
 
 export default withStyles(styles)(SimpleTooltips);
