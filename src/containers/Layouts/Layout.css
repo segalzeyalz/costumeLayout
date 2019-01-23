@@ -56,21 +56,11 @@
     align-self: auto;
 }
 
-:local(.FlexyContainer) {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: stretch;
-    align-items: center;
-}
 :local(.Layout) {
     border: 1px solid black;
     border-radius: 10px;
 }
-:local(.FlexyContainer *) {
-    order: 0;
-    flex: 0 1 auto;
-    align-self: auto;
-    width: 10%;
-}
+
+
+@media screen and (max-width:420px) {
+  }

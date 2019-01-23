@@ -6,3 +6,7 @@
     align-content: stretch;
     align-items: flex-start;
 }
+
+.react-grid-layout.layout{
+    max-height: 540px;
+} 

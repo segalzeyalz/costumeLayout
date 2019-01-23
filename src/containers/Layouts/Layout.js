@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch, Link } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import * as actionTypes from './../../constants/actionTypes';
 import GridLayout from "react-grid-layout";
-import Card from '@material-ui/core/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
@@ -17,24 +17,25 @@ class Layout extends Component {
     library.add(faHome)
     let {layout, idxLayout} = this.props
         let {gridStructure} = layout[idxLayout]
-        //render all the object
+
+        //Here render just a single layout with component to drag and drop aside
       return (
         <div className={CSS.maxHeight}>
-        <GridLayout className="layout" layout={gridStructure} cols={12} rowHeight={75} width={1800}>
-            {gridStructure.map(key=><div
-              onDrop={()=>{this.props.onDrop(idxLayout, key.i)}}
-              onDragOver={(e)=>e.preventDefault()}
-              className={CSS.Layout}
-              key={key.i}>
-                {key.comps.map(element=>{
-                  return React.cloneElement(
-                    element.comp, 
-                    { id: element.id, onDelete:() =>this.props.onDelete(idxLayout, key.i, element.id) })
-                })}
-            </div>)}
+          <GridLayout className="layout" layout={gridStructure} cols={12} rowHeight={75} width={1600}>
+              {gridStructure.map(key=><div
+                onDrop={()=>{this.props.onDrop(idxLayout, key.i)}}
+                onDragOver={(e)=>e.preventDefault()}
+                className={CSS.Layout}
+                key={key.i}>
+                  {key.comps.map(element=>{
+                    return React.cloneElement(
+                      element.comp, 
+                      { id: element.id, onDelete:() =>this.props.onDelete(idxLayout, key.i, element.id) })
+                  })}
+              </div>)}
 
-            <Route path={`/`} component={App} />
-        </GridLayout>
+              <Route path={`/`} component={App} />
+          </GridLayout>
             <div className={CSS.Footer}>
               <Link className={CSS.Link} to={`/`}><FontAwesomeIcon icon="home" />HOME</Link>
             </div>
@@ -45,7 +46,7 @@ class Layout extends Component {
   const mapStateToProps = state => {
     return {
       layout: state.components.layOuts,
-      idxLayout:state.layout.selectedLayout
+      idxLayout:state.layout.selectedLayout,
     };
   };
   
@@ -55,4 +56,10 @@ class Layout extends Component {
       onDelete: (layoutId, positionKey, idOfElement) => dispatch({type:actionTypes.REMOVE, layoutId: layoutId, positionKey:positionKey, idOfElement:idOfElement}),
     }
   }
+  Layout.propTypes = {
+    layout:PropTypes.array, 
+    idxLayout:PropTypes.number,
+    onDrop:PropTypes.func,
+    onDelete: PropTypes.func,
+  };
   export default connect(mapStateToProps, mapDispatchToProps)(Layout);

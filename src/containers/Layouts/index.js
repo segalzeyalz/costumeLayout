@@ -5,7 +5,6 @@ import CSS from './Layout.css';
 import GridLayout from "react-grid-layout";
 import Layout from './SingleLayout.js';
 import { Route, Switch, Link } from 'react-router-dom'
-import { DeafultButton, CustomizedBadge, CircularDeterminate, ControlledOpenSelect, SimpleTooltips } from './../../components/Comps/'
 import { connect } from 'react-redux';
     
 class Layouts extends Component {

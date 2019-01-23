@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-
-import {
-    DeafultButton,
-    CustomizedBadge,
-    CircularDeterminate,
-    ControlledOpenSelect,
-    SimpleTooltips} from './../components/Comps';
+import { DeafultButton, CustomizedBadge, CircularDeterminate, ControlledOpenSelect, SimpleTooltips } from './../components/Comps';
     
 const layoutsArr = [
         {  id:1,

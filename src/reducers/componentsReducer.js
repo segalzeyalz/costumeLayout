@@ -1,20 +1,8 @@
-import react, {
-    Component
-} from 'react';
+import react, { Component} from 'react';
 import ReactDOM from 'react-dom'
-import {
-    DROP_COMPONENT,
-    DRAG_COMPONENT,
-    REMOVE
-} from './../constants/actionTypes';
+import { DROP_COMPONENT, DRAG_COMPONENT, REMOVE } from './../constants/actionTypes';
 import obj from './../constants/layoutsArr';
-import {
-    DeafultButton,
-    CustomizedBadge,
-    CircularDeterminate,
-    ControlledOpenSelect,
-    SimpleTooltips
-} from './../components/Comps';
+import { DeafultButton, CustomizedBadge, CircularDeterminate, ControlledOpenSelect, SimpleTooltips } from './../components/Comps';
 
 const initialState = {
     layOuts: obj.layoutsArr,
@@ -22,20 +10,15 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-    let {
-        layOuts
-    } = state;
+    let { layOuts} = state;
     switch (action.type) {
         case DROP_COMPONENT:
-            let {
-                layoutId,
-                positionKey
-            } = action
+            let { layoutId, positionKey } = action
             let newLayouts = [...layOuts];
             let gridaArr = [...newLayouts[layoutId].gridStructure];
             //Find index in the grid in order to add there
             let idxKey = gridaArr.findIndex((elem) => {
-                return elem.i == positionKey
+                return elem.i === positionKey
             })
             //adding to comps a new compoent, with a unique id
             gridaArr[idxKey].comps = [...gridaArr[idxKey].comps, {
@@ -63,7 +46,7 @@ const reducer = (state = initialState, action) => {
             let comps = clickedLayout[idxPositionKey].comps;
             //Check inside compoentns of div where the item is
             let idxToRemove = comps.findIndex(elem => {
-                return elem.id == action.idOfElement
+                return elem.id === action.idOfElement
             })
             //remove the item clicked
             if (idxToRemove !== -1) {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch, Link } from 'react-router-dom'
 import ComponentsCont from './../../containers/ComponentsCont';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as actionTypes from './../../constants/actionTypes';
 import CSS from './Layout.css';
@@ -26,4 +27,9 @@ const mapDispatchToProps = dispatch => {
     getLayout: (layoutId) => dispatch({type:actionTypes.CHANGE_LAYOUT, id: layoutId}),
   }
 }
-export default connect(null, mapDispatchToProps)(LayoutContainer);
+
+LayoutContainer.propTypes = {
+  getLayout: PropTypes.func,
+  match: PropTypes.object,
+};
+export default connect(null, mapDispatchToProps)(LayoutContainer)
