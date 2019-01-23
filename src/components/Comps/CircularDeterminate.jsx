@@ -1,13 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
-
-const styles = theme => ({
-  progress: {
-    margin: theme.spacing.unit * 2,
-  },
-});
 
 class CircularDeterminate extends React.Component {
   state = {
@@ -30,7 +23,6 @@ class CircularDeterminate extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
     let {  onDrag } = this.props;
     if (!onDrag) {
       onDrag = (e) => e.preventDefault()
@@ -40,7 +32,6 @@ class CircularDeterminate extends React.Component {
               onDragOver = {(e) => e.preventDefault()} draggable = {true} >
               <CircularProgress
                 onClick = {() => this.props.onDelete ? this.props.onDelete() : null}
-                className = {classes.progress}
                 variant = "determinate"
                 value = {this.state.completed}
                 color = "secondary" />
@@ -53,4 +44,4 @@ CircularDeterminate.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(CircularDeterminate);
+export default CircularDeterminate;
