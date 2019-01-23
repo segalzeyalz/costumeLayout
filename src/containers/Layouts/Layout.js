@@ -7,7 +7,6 @@ import Card from '@material-ui/core/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
-
 import App from './../../components/App'
 import CSS from './Layout.css';
 
@@ -20,7 +19,7 @@ class Layout extends Component {
         let {gridStructure} = layout[idxLayout]
         //render all the object
       return (
-        <div>
+        <div className={CSS.maxHeight}>
         <GridLayout className="layout" layout={gridStructure} cols={12} rowHeight={75} width={1800}>
             {gridStructure.map(key=><div
               onDrop={()=>{this.props.onDrop(idxLayout, key.i)}}
@@ -44,7 +43,6 @@ class Layout extends Component {
     }
   }
   const mapStateToProps = state => {
-    console.log(state)
     return {
       layout: state.components.layOuts,
       idxLayout:state.layout.selectedLayout

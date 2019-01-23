@@ -9,10 +9,11 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
+    let layoutOutlines = [];
+    let chosenIdLayout = action.id;
     switch (action.type) {
         case GET_LAYOUT:
             // Rendering each layout
-            let layoutOutlines = [];
             for (let i = 0; i < 6; ++i) {
                 layoutOutlines = [...layoutOutlines, {
                     i: 'a' + i,
@@ -24,7 +25,6 @@ const reducer = (state = initialState, action) => {
                 layout: layoutOutlines
             }
         case CHANGE_LAYOUT:
-            let chosenIdLayout = action.id;
             //can use only layout on the range
             return {
                 ...state,

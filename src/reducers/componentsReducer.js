@@ -49,9 +49,7 @@ const reducer = (state = initialState, action) => {
                 dragComponent: ''
             }
         case DRAG_COMPONENT:
-            let {
-                comp
-            } = action;
+            let { comp } = action;
             return {
                 ...state,
                 dragComponent: comp

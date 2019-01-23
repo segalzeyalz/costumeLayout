@@ -7,7 +7,7 @@ import CSS from './Layout.css';
 import Layout from './Layout';
 
 class LayoutContainer extends Component {
-  componentWillMount(){
+  componentDidMount(){
     this.props.getLayout(this.props.match.params.id)
   }
   render() {
